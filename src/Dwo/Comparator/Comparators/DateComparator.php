@@ -2,6 +2,8 @@
 
 namespace Dwo\Comparator\Comparators;
 
+use DateTime;
+
 /**
  * @author David Wolter <david@lovoo.com>
  */
@@ -14,10 +16,10 @@ class DateComparator implements ComparatorsInterface
     public static function getComparators()
     {
         return array(
-            'date_range' => function ($now, $from = null, $to = null) {
-                $now = self::makeDate($now);
+            'date_range' => function ($from = null, $to = null, $now = null) {
                 $from = self::makeDate($from);
                 $to = self::makeDate($to);
+                $now = self::makeDate($now ?: 'now');
 
                 if (self::isDate($from) && self::isDate($to)) {
                     return $from <= $now && $to >= $now;
@@ -53,20 +55,20 @@ class DateComparator implements ComparatorsInterface
      */
     protected static function isDate($date = null)
     {
-        return $date instanceof \DateTime;
+        return $date instanceof DateTime;
     }
 
     /**
      * @param mixed $date
      *
-     * @return \DateTime|null
+     * @return DateTime|null
      */
     protected static function makeDate($date = null)
     {
         if (is_string($date)) {
-            $date = new \DateTime($date);
+            $date = new DateTime($date);
         } elseif (is_numeric($date)) {
-            $date = new \DateTime('@'.$date);
+            $date = new DateTime('@'.$date);
         }
 
         return self::isDate($date) ? $date : null;

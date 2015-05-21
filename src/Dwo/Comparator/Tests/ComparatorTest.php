@@ -83,14 +83,16 @@ class ComparatorTest extends \PHPUnit_Framework_TestCase
             array(false, 'day', new \DateTime('now'), new \DateTime('-1 day')),
             array(true, 'day', time(), 'now'),
             //DateRange
-            array(true, 'date_range', 'now', '-1day', '+1day'),
-            array(true, 'date_range', '-2day', '-3day', '-1day'),
-            array(true, 'date_range', time(), time() - 10, time() + 10),
-            array(true, 'date_range', 'now', new \DateTime('-1day'), '+1day'),
-            array(true, 'date_range', 'now', new \DateTime('-1day'), new \DateTime('+1day')),
-            array(true, 'date_range', 'now', '-1day', new \DateTime('+1day')),
-            array(true, 'date_range', new \DateTime('now'), '-1day', new \DateTime('+1day')),
-            array(true, 'date_range', new \DateTime('now'), new \DateTime('-1day'), new \DateTime('+1day')),
+            array(true, 'date_range', '-1day', '+1day'),
+            array(true, 'date_range', '-1day'),
+            array(true, 'date_range', null, '+1day'),
+            array(true, 'date_range', '-3day', '-1day', '-2day'),
+            array(true, 'date_range', time() - 10, time() + 10, time()),
+            array(true, 'date_range', new \DateTime('-1day'), '+1day'),
+            array(true, 'date_range', new \DateTime('-1day'), new \DateTime('+1day'), 'now'),
+            array(true, 'date_range', '-1day', new \DateTime('+1day'), 'now'),
+            array(true, 'date_range', '-1day', new \DateTime('+1day'), new \DateTime('now')),
+            array(true, 'date_range', new \DateTime('-1day'), new \DateTime('+1day'), new \DateTime('now')),
         );
     }
 }

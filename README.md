@@ -9,7 +9,7 @@ Very useful for dynamic comparisons.
 $operator = '==';
 $argument1 = 1;
 $argument2 = 1;
-if(Comparator::compare($operator, $argument1, $argument2) {
+if(Comparator::compare($operator, $argument1, $argument2)) {
     //do something
 }
 ```
@@ -30,17 +30,17 @@ The Comparator comes with some operators:
 ```php
 
 //Example 'bool' operator
-if(Comparator::compare('bool', true, $_GET['activated']) {
+if(Comparator::compare('bool', true, $_GET['activated'])) {
     //do something
 }
 
 //Example 'date' operator
-if(Comparator::compare('day', 'now', $date) {
+if(Comparator::compare('day', 'now', $date)) {
     //do something
 }
 
 //Example 'date_range' operator
-if(Comparator::compare('date_range', new \DateTime(), $dateFrom, $dateTo) {
+if(Comparator::compare('date_range', new \DateTime(), $dateFrom, $dateTo)) {
     //do something
 }
 ```
@@ -49,10 +49,7 @@ The 'date' and 'date_range' operators can handle Timestamps, DateTimeObjects as 
 
 Installation
 ------------
+Installation with Composer
 ```yml
-{
-    "require": {
-        "dwo/comparator": "1.0.*"
-    }
-}
+composer.phar require dwo/comparator
 ```

@@ -3,7 +3,7 @@
 namespace Dwo\Comparator\Comparators;
 
 /**
- * @author David Wolter <david@lovoo.com>
+ * @author Dave Www <davewwwo@gmail.com>
  */
 interface ComparatorsInterface
 {

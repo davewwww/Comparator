@@ -5,7 +5,7 @@ namespace Dwo\Comparator\Comparators;
 use DateTime;
 
 /**
- * @author David Wolter <david@lovoo.com>
+ * @author Dave Www <davewwwo@gmail.com>
  */
 class DateComparator implements ComparatorsInterface
 {

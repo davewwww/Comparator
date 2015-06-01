@@ -5,7 +5,7 @@ namespace Dwo\Comparator\Tests;
 use Dwo\Comparator\Comparator;
 
 /**
- * @author David Wolter <david@lovoo.com>
+ * @author Dave Www <davewwwo@gmail.com>
  */
 class ComparatorTest extends \PHPUnit_Framework_TestCase
 {

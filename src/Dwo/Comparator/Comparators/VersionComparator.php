@@ -14,7 +14,7 @@ class VersionComparator implements ComparatorsInterface
     {
         return array(
             'version' => function ($a, $b, $operator = null) {
-                return version_compare($a, $b, $operator ?: '>=');
+                return version_compare($a, $b, $operator ?: '<=');
             }
         );
     }
